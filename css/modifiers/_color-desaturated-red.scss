@@ -1,0 +1,5 @@
+@use "../common/colors";
+
+.color-desaturated-red {
+    color: colors.$desaturated-red;
+}
