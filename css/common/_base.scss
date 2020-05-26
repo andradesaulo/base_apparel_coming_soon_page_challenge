@@ -1,15 +1,14 @@
-@use "colors";
-@use "font-weights";
-
-$default-font-size: 16px;
-$default-font-family: 'Josefin Sans', sans-serif;
+@use "colors" as c;
+@use "gradients" as g;
+@use "font-properties" as f;
+@use "min-width" as m;
 
 body {
-    background-color: white;
-    color: colors.$grayish-red;
-    font-family: $default-font-family;
-    font-size: $default-font-size;
-    font-weight: font-weights.$regular;
+    background: g.$light-gradient;
+    color: c.$primary-color-1;
+    font-family: f.$default-font-family;
+    font-size: f.$default-font-size;
+    font-weight: f.$regular;
     margin: 0;
 }
 
@@ -17,11 +16,43 @@ h1, p {
     margin: 0;
 }
 
-header {
-    padding: 2rem;
-}
 
 h1, h2, h3, h4, h5, h6 {
-    font-weight: font-weights.$bold;
+    font-weight: f.$bold;
+    font-size: 1rem;
     text-transform: uppercase;
+    letter-spacing: .75rem;
+    text-align: center;
+    @media (min-width: m.$smaller-min-width) {
+        text-align: left;
+    }
+}
+
+p {
+    text-align: center;
+    @media (min-width: m.$smaller-min-width) {
+        text-align: left;
+    }
+}
+
+a {
+    color: c.$primary-color-1;
+}
+
+footer {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin: 0 10vw;
+    font-size: .9rem;
+
+    @media (min-width: m.$smaller-min-width) {
+        font-size: 1rem;
+        padding-bottom: 0;
+    }
+}
+
+@media (min-width: m.$smaller-min-width) {
+    .main-container {
+        background: url(../../images/bg-pattern-desktop.svg) no-repeat border-box center, g.$light-gradient;
+    }
 }

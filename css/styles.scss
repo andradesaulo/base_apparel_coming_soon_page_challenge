@@ -1,4 +1,4 @@
 @use "./common/base";
-@use "./modifiers/text-aligned";
-@use "./modifiers/text-thin";
-@use "./modifiers/color-desaturated-red";
+@use "./components/components_all";
+@use "./modifiers/modifiers_all";
+@use "./layout/layout";

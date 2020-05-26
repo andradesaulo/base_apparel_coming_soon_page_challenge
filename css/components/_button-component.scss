@@ -1,0 +1,38 @@
+@use "../common/gradients" as g;
+
+.button-component {
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    
+    &__button-itself {
+        width: 4rem;
+        height: 100%;
+        border: none;
+        background: g.$dark-gradient;
+        border-radius: 50%/2rem;
+        box-shadow: 0px 10px 19px -6px rgba(0, 0, 0, 0.1);
+
+        &:active {
+            box-shadow: 0px 10px 19px -6px rgba(0, 0, 0, .3) inset;
+            outline: none;
+        }
+
+        &:hover {
+            background: g.$medium-gradient;
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+    }
+    
+    &__icon{
+        position: absolute;
+        left: 43.2%;
+        top: 30%;
+        pointer-events: none;
+    }
+}

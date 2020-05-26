@@ -1,5 +1,5 @@
-@use "../common/font-weights";
+@use "../common/font-properties";
 
 .text-thin {
-    font-weight: font-weights.$thin;
+    font-weight: font-properties.$thin;
 }

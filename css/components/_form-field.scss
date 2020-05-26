@@ -1,0 +1,52 @@
+@use "../common/colors" as c;
+@use "../common/font-properties" as f;
+@use "sass:color";
+
+.form-field {
+    height: 3rem;
+    position: relative;
+    width: 100%;
+    
+    &__input {
+        background-color: transparent;
+        border: none;
+        border-radius: 200px / 200px;
+        box-shadow: 0 0 1px 1px color.change(c.$primary-color-2, $alpha: 0.3) inset;
+        box-sizing: border-box;
+        color: c.$primary-color-2;
+        font-family: f.$default-font-family;
+        height:100%;
+        padding-left: 1.5rem;
+        padding-right: 6.5rem;
+        width: 100%;
+        
+        &:focus {
+            outline: none;
+        }
+
+        &::placeholder {
+            color: color.change(c.$primary-color-2, $alpha: 0.3);
+            font-family: f.$default-font-family;
+        }
+
+        &--is-invalid-_js {
+            box-shadow: 0 0 1px 2px c.$soft-red inset;
+        }
+    }
+
+    &__input-error {
+        color: c.$soft-red;
+        display: inline-block;
+        font-size: .9rem;
+        padding: 0.7rem 0rem 0.7rem 1.5rem;
+
+        &::after {
+            $icon-height: 24px;
+
+            content: url("../../images/icon-error.svg");
+            position: absolute;
+            top: calc(1.5rem - #{$icon-height}/2);
+            right: 4.5rem;
+        }
+    }
+}

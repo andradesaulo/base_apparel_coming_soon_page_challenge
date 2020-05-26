@@ -1,0 +1,5 @@
+@use "../common/colors" as c;
+
+.primary-color-1 {
+    color: c.$primary-color-1;
+}
